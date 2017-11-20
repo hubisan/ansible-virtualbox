@@ -1,8 +1,9 @@
 ---
 # tasks file for virtualbox: ubuntu.yml
-- name: add virtualbox oracle apt key
+- name: add virtualbox oracle apt keys
   become: yes
-  apt_key: url="{{ virtualbox_key_url }}" state=present
+  apt_key: url="{{ item }}" state=present
+  with_items: "{{ virtualbox_key_urls }}"
   tags: virtualbox
 
 - name: add virtualbox repository

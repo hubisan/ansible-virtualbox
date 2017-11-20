@@ -1,6 +1,8 @@
 ---
 # vars file for virtualbox
-virtualbox_key_url: "http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc"
+virtualbox_key_urls: 
+  - "https://www.virtualbox.org/download/oracle_vbox.asc"
+  - "https://www.virtualbox.org/download/oracle_vbox_2016.asc"
 virtualbox_repo: "deb http://download.virtualbox.org/virtualbox/debian {{ ansible_distribution_release }} contrib"
 virtualbox_pkg_name: "virtualbox-{{ virtualbox_version }}"
 virtualbox_dkms_pkg_name: "virtualbox-dkms"
